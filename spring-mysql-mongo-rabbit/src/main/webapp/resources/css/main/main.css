@@ -1,0 +1,11 @@
+/* Custom CSS for Monitoring
+----------------------------------*/
+
+.monitor {
+	border : solid 2px #cccccc; 
+	background : #000000; 
+	color : #ffffff; 
+	padding : 4px; 
+	height : 300px; 
+	overflow : auto;
+}

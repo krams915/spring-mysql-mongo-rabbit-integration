@@ -12,15 +12,16 @@
 <head>
 
 	<!-- CSS Imports-->
-	<link rel="stylesheet" type="text/css" media="screen" href="${resourcesUrl}/css/jquery/pepper-grinder/jquery-ui-1.8.12.custom.css"/>
+	<link rel="stylesheet" type="text/css" media="screen" href="${resourcesUrl}/css/jquery/dark-hive/jquery-ui-1.8.6.custom.css"/>
+	<link rel="stylesheet" type="text/css" media="screen" href="${resourcesUrl}/css/main/main.css"/>
 
 	<!-- JS Imports -->
 	<script type="text/javascript" src="${resourcesUrl}/js/jquery/jquery-1.5.2.min.js"></script>
 	<script type="text/javascript" src="${resourcesUrl}/js/jquery/jquery-ui-1.8.12.custom.min.js"></script>
 
-	<title>Demo</title>
+	<title>Error Monitor</title>
 </head>	
-<body>
+<body class="ui-widget-content">
 
 <script type="text/javascript">
 	var running = false;
@@ -65,7 +66,7 @@
 </script>
 
 <h4>Error Monitor</h4>
-<div id="log" style="border : solid 2px #cccccc; background : #000000; color : #ffffff; padding : 4px; height : 300px; overflow : auto;"> </div>
+<div id="log" class="monitor"> </div>
 
 </body>
 </html>
