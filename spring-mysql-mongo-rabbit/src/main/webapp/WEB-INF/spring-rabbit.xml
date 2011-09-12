@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 	xmlns="http://www.springframework.org/schema/beans" 
+       	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       	xmlns:p="http://www.springframework.org/schema/p" 
+       	xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans 
+			http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+			http://www.springframework.org/schema/context
+			http://www.springframework.org/schema/context/spring-context-3.1.xsd
+			http://www.springframework.org/schema/rabbit
+			http://www.springframework.org/schema/rabbit/spring-rabbit-1.0.xsd">
+	   		
+	<context:property-placeholder location="/WEB-INF/spring.properties" />
+	
+	<rabbit:queue id="eventQueue"/>
+	<rabbit:queue id="errorQueue"/>
+	
+	<rabbit:topic-exchange name="eventExchange">
+		<rabbit:bindings>
+			<rabbit:binding queue="eventQueue" pattern="event.general.*"/>
+			<rabbit:binding queue="errorQueue" pattern="event.error.*"/>
+		</rabbit:bindings>
+	</rabbit:topic-exchange>
+	
+	<rabbit:template connection-factory="rabbitConnectionFactory" exchange="eventExchange"/>
+
+	<rabbit:admin connection-factory="rabbitConnectionFactory"/>
+
+	<rabbit:listener-container>
+		<rabbit:listener queues="eventQueue" ref="monitorController" method="handleEvent"/>
+		<rabbit:listener queues="errorQueue" ref="monitorController" method="handleError"/>
+	</rabbit:listener-container>
+	
+	<bean id="rabbitConnectionFactory" class="org.springframework.amqp.rabbit.connection.CachingConnectionFactory"
+		p:username="guest" p:password="guest" p:port="5672">
+		<constructor-arg value="localhost" />
+	</bean>
+	
+</beans>

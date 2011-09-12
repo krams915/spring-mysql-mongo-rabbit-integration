@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="spring-mysql-mongo-rabbit">
+        <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <property name="context-root" value="spring-mysql-mongo-rabbit"/>
+        <property name="java-output-path" value="/spring-mysql-mongo-rabbit/target/classes"/>
+    </wb-module>
+</project-modules>
