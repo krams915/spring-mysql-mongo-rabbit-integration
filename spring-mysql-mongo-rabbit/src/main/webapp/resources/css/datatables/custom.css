@@ -1,0 +1,25 @@
+/* Custom CSS for DataTables
+----------------------------------*/
+.paging_full_numbers .ui-button {
+	padding: 2px 6px;
+	margin: 0;
+	cursor: pointer;
+}
+
+.dataTables_paginate .ui-button {
+	margin-right: -0.1em !important;
+	float: right;
+}
+
+.dataTables_info {
+	margin-top: 2px;
+	float: left;
+}
+
+.dataTables_filter {
+	float: right;
+}
+
+.dataTables_length {
+	float: left;
+}

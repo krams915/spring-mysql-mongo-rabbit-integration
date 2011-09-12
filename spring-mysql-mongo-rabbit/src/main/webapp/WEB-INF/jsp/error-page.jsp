@@ -1,6 +1,4 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ page session="false" %>
 
@@ -13,6 +11,7 @@
 
 	<!-- CSS Imports-->
 	<link rel="stylesheet" type="text/css" media="screen" href="${resourcesUrl}/css/jquery/dark-hive/jquery-ui-1.8.6.custom.css"/>
+	<link rel="stylesheet" type="text/css" media="screen" href="${resourcesUrl}/css/datatables/custom.css"/>
 
 	<!-- JS Imports -->
 	<script type="text/javascript" src="${resourcesUrl}/js/jquery/jquery-1.5.2.min.js"></script>
@@ -23,28 +22,13 @@
 	
 	<title>Errors</title>
 </head>	
-<body>
+<body class="ui-widget-content">
 
-<script type="text/javascript"> 
-// Retrieve all records
-$(function() {
-	$.getRecords('#errorTable', '${rootUrl}error/getall', 
-			['_id', 'type', 'signature', 'arguments',  'count', 'dateEncountered'], 
-			function() {
-					$('#errorTable').dataTable( {
-						"bJQueryUI": true,
-						"sPaginationType": "full_numbers"
-					});
-				});
-});
-</script>
-
-<h4>Errors</h4>
+<h3>Errors</h3>
 <table id="errorTable">
 	<thead>
 		<tr>
 			<th></th>
-			<th>Id</th>
 			<th>Type</th>
 			<th>Signature</th>
 			<th>Arguments</th>
@@ -55,6 +39,20 @@ $(function() {
 	<tbody>
 	</tbody>
 </table>
+
+<script type="text/javascript"> 
+// Retrieves all records
+$(function() {
+	$.getRecords('#errorTable', '${rootUrl}error/getall', 
+		['type', 'signature', 'arguments',  'count', 'dateEncountered'], 
+		function() {
+			$('#errorTable').dataTable( {
+				"bJQueryUI": true,
+				"sPaginationType": "full_numbers"
+			});
+		});
+});
+</script>
 
 </body>
 </html>

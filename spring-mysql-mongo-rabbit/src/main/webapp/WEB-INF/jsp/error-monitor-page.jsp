@@ -17,7 +17,6 @@
 	<!-- JS Imports -->
 	<script type="text/javascript" src="${resourcesUrl}/js/jquery/jquery-1.5.2.min.js"></script>
 	<script type="text/javascript" src="${resourcesUrl}/js/jquery/jquery-ui-1.8.12.custom.min.js"></script>
-	<script type="text/javascript" src="${resourcesUrl}/js/datejs/date.js"></script>
 
 	<title>Demo</title>
 </head>	
