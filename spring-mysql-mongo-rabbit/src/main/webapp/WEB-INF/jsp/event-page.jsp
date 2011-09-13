@@ -12,6 +12,7 @@
 	<!-- CSS Imports-->
 	<link rel="stylesheet" type="text/css" media="screen" href="${resourcesUrl}/css/jquery/dark-hive/jquery-ui-1.8.6.custom.css"/>
 	<link rel="stylesheet" type="text/css" media="screen" href="${resourcesUrl}/css/datatables/custom.css"/>
+	<link rel="stylesheet" type="text/css" media="screen" href="${resourcesUrl}/css/main/main.css"/>
 	
 	<!-- JS Imports -->
 	<script type="text/javascript" src="${resourcesUrl}/js/jquery/jquery-1.5.2.min.js"></script>
@@ -24,7 +25,17 @@
 </head>	
 <body class="ui-widget-content">
 
-<h3>Events</h3>
+<div id="menu">
+	<ul>
+	<li><a href="${rootUrl}event">Events</a></li>
+	<li><a href="${rootUrl}error">Errors</a></li>
+	<li><a href="${rootUrl}monitor/event">Monitor Events</a></li>
+	<li><a href="${rootUrl}monitor/error">Monitor Errors</a></li>
+	</ul>
+	<br style="clear:left"/>
+</div>
+
+<h3 class="title">Events</h3>
 <table id='eventTable' style="border: 0px solid; width: 100%; text-align:center">
  <thead>
   <tr>
@@ -42,9 +53,11 @@
 
 <c:if test="${empty events}">There are currently no events in the list.</c:if>
 
+<div class="control">
 <span><a href="#" id="addLink">Add</a></span>
 <span><a href="#" id="editLink">Edit</a></span>
 <span><a href="#" id="deleteLink">Delete</a></span>
+</div>
 
 <jsp:include page="/WEB-INF/jsp/dialogs/addDialog.jsp"/>
 <jsp:include page="/WEB-INF/jsp/dialogs/editDialog.jsp"/>

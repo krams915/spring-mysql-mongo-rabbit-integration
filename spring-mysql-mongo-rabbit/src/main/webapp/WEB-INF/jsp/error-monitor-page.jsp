@@ -14,7 +14,7 @@
 	<!-- CSS Imports-->
 	<link rel="stylesheet" type="text/css" media="screen" href="${resourcesUrl}/css/jquery/dark-hive/jquery-ui-1.8.6.custom.css"/>
 	<link rel="stylesheet" type="text/css" media="screen" href="${resourcesUrl}/css/main/main.css"/>
-
+	
 	<!-- JS Imports -->
 	<script type="text/javascript" src="${resourcesUrl}/js/jquery/jquery-1.5.2.min.js"></script>
 	<script type="text/javascript" src="${resourcesUrl}/js/jquery/jquery-ui-1.8.12.custom.min.js"></script>
@@ -22,6 +22,16 @@
 	<title>Error Monitor</title>
 </head>	
 <body class="ui-widget-content">
+
+<div id="menu">
+	<ul>
+	<li><a href="${rootUrl}event">Events</a></li>
+	<li><a href="${rootUrl}error">Errors</a></li>
+	<li><a href="${rootUrl}monitor/event">Monitor Events</a></li>
+	<li><a href="${rootUrl}monitor/error">Monitor Errors</a></li>
+	</ul>
+	<br style="clear:left"/>
+</div>
 
 <script type="text/javascript">
 	var running = false;
@@ -65,7 +75,7 @@
 	});
 </script>
 
-<h4>Error Monitor</h4>
+<h3 class="title">Error Monitor</h3>
 <div id="log" class="monitor"> </div>
 
 </body>

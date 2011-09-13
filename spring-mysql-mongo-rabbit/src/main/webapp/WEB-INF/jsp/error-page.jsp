@@ -12,7 +12,8 @@
 	<!-- CSS Imports-->
 	<link rel="stylesheet" type="text/css" media="screen" href="${resourcesUrl}/css/jquery/dark-hive/jquery-ui-1.8.6.custom.css"/>
 	<link rel="stylesheet" type="text/css" media="screen" href="${resourcesUrl}/css/datatables/custom.css"/>
-
+	<link rel="stylesheet" type="text/css" media="screen" href="${resourcesUrl}/css/main/main.css"/>
+	
 	<!-- JS Imports -->
 	<script type="text/javascript" src="${resourcesUrl}/js/jquery/jquery-1.5.2.min.js"></script>
 	<script type="text/javascript" src="${resourcesUrl}/js/jquery/jquery-ui-1.8.12.custom.min.js"></script>
@@ -24,13 +25,22 @@
 </head>	
 <body class="ui-widget-content">
 
-<h3>Errors</h3>
+<div id="menu">
+	<ul>
+	<li><a href="${rootUrl}event">Events</a></li>
+	<li><a href="${rootUrl}error">Errors</a></li>
+	<li><a href="${rootUrl}monitor/event">Monitor Events</a></li>
+	<li><a href="${rootUrl}monitor/error">Monitor Errors</a></li>
+	</ul>
+	<br style="clear:left"/>
+</div>
+
+<h3 class="title">Errors</h3>
 <table id="errorTable">
 	<thead>
 		<tr>
 			<th></th>
 			<th>Type</th>
-			<th>Signature</th>
 			<th>Arguments</th>
 			<th>Count</th>
 			<th>Date</th>
@@ -44,7 +54,7 @@
 // Retrieves all records
 $(function() {
 	$.getRecords('#errorTable', '${rootUrl}error/getall', 
-		['type', 'signature', 'arguments',  'count', 'dateEncountered'], 
+		['type', 'arguments',  'count', 'dateEncountered'], 
 		function() {
 			$('#errorTable').dataTable( {
 				"bJQueryUI": true,
