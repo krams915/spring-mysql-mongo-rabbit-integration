@@ -1,12 +1,5 @@
 /* Custom CSS for monitoring
 ----------------------------------*/
-.title {
-	margin: 0px;
-	padding: 0px;
-	text-align: center;
-	font-size: 1.5em;
-}
-
 .monitor {
 	border: solid 1px #cccccc;
 	background: #000000;
@@ -16,8 +9,27 @@
 	overflow: auto;
 }
 
+/* CSS for title header 
+-------------------------*/
+.title {
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+/* CSS for controller buttons 
+--------------------------------*/
 .control {
 	margin-top: 5px;
+}
+
+/* Custom CSS for event table
+----------------------------------*/
+#eventTable {
+    border: 0px solid; 
+    width: 100%; 
+    text-align:center;   
 }
 
 /* Menu style based on 

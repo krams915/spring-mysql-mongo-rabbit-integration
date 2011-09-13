@@ -36,7 +36,7 @@
 </div>
 
 <h3 class="title">Events</h3>
-<table id='eventTable' style="border: 0px solid; width: 100%; text-align:center">
+<table id='eventTable'>
  <thead>
   <tr>
    <th></th>
@@ -54,9 +54,9 @@
 <c:if test="${empty events}">There are currently no events in the list.</c:if>
 
 <div class="control">
-<span><a href="#" id="addLink">Add</a></span>
-<span><a href="#" id="editLink">Edit</a></span>
-<span><a href="#" id="deleteLink">Delete</a></span>
+	<span><a href="#" id="addLink">Add</a></span>
+	<span><a href="#" id="editLink">Edit</a></span>
+	<span><a href="#" id="deleteLink">Delete</a></span>
 </div>
 
 <jsp:include page="/WEB-INF/jsp/dialogs/addDialog.jsp"/>
