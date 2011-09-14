@@ -27,6 +27,8 @@
 	  <aop:advisor advice-ref="customizableTraceInterceptor" 
 	    pointcut="execution(public * org.krams.tutorial.controller.EventController.*(..))"/>
 	  <aop:advisor advice-ref="customizableTraceInterceptor" 
+	    pointcut="execution(public * org.krams.tutorial.controller.JqgridEventController.*(..))"/>
+	  <aop:advisor advice-ref="customizableTraceInterceptor" 
 	    pointcut="execution(public * org.krams.tutorial.controller.MainController.*(..))"/>
 	</aop:config>
 	

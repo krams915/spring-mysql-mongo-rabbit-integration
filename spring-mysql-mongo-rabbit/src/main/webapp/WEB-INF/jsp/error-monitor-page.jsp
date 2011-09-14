@@ -25,7 +25,8 @@
 
 <div id="menu">
 	<ul>
-	<li><a href="${rootUrl}event">Events</a></li>
+	<li><a href="${rootUrl}event">Events (DataTables)</a></li>
+	<li><a href="${rootUrl}jqgrid/event">Events (jQgrid)</a></li>
 	<li><a href="${rootUrl}error">Errors</a></li>
 	<li><a href="${rootUrl}monitor/event">Monitor Events</a></li>
 	<li><a href="${rootUrl}monitor/error">Monitor Errors</a></li>
