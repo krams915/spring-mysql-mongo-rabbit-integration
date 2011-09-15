@@ -15,10 +15,17 @@
 	<spring.data.mongo.version>1.0.0.M4</spring.data.mongo.version>
 	<spring.amqp.version>1.0.0.RELEASE</spring.amqp.version>
   	<slf4j-version>1.6.1</slf4j-version>
+	<org.cloudfoundry-version>0.8.0</org.cloudfoundry-version>
   </properties>
   
   <dependencies>
-  
+  <!-- CloudFoundry -->
+	<dependency>
+		<groupId>org.cloudfoundry</groupId>
+		<artifactId>cloudfoundry-runtime</artifactId>
+		<version>${org.cloudfoundry-version}</version>
+	</dependency>
+	
   <!-- Spring Core -->
     <dependency>
     	<groupId>org.springframework</groupId>
@@ -68,6 +75,12 @@
 		    <groupId>org.aspectj</groupId>
 		    <artifactId>aspectjrt</artifactId>
 		    <version>1.6.10</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.aspectj</groupId>
+	    <artifactId>aspectjweaver</artifactId>
+	    <version>1.6.10</version>
 	</dependency>
 	
 	<!-- Cglib is a powerful, high performance and quality Code Generation Library, 

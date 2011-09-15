@@ -4,6 +4,7 @@ import org.aopalliance.intercept.MethodInvocation;
 import org.apache.commons.logging.Log;
 import org.apache.log4j.Logger;
 import org.springframework.aop.interceptor.CustomizableTraceInterceptor;
+import org.springframework.core.annotation.Order;
 
 /**
  * Extends {@link CustomizableTraceInterceptor} to provide custom logging levels
