@@ -13,6 +13,8 @@ import org.springframework.stereotype.Component;
 
 /**
  * Interceptor for publishing messages to RabbitMQ 
+ * 
+ * @author krams at {@link http://krams915@blogspot.com}
  */
 @Aspect
 @Order(1)
@@ -34,8 +36,8 @@ public class EventRabbitAspect {
 		try {
 			
 			logger.debug("Publishing event to RabbitMQ");
-			this.amqpTemplate.convertAndSend(RABBIT_EXCHANGE, GENERAL_EVENT_ROUTE_KEY, new Date() + ": " + pjp.getSignature().toLongString());
-			
+			this.amqpTemplate.convertAndSend(RABBIT_EXCHANGE, GENERAL_EVENT_ROUTE_KEY, new Date() + ": " + pjp.toShortString());
+
 			return pjp.proceed();
 			
 		} catch (Exception e) {

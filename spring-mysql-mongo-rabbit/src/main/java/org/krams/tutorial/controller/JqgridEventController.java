@@ -6,8 +6,9 @@ import org.krams.tutorial.dto.JqgridTableDto;
 import org.krams.tutorial.dto.ResponseDto;
 import org.krams.tutorial.service.IEventService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -25,11 +26,11 @@ public class JqgridEventController {
 	private volatile IEventService service;
 
 	@RequestMapping
-	public String getEventPage(Model model) {
-		model.addAttribute("events", service.readAll());
+	public String getEventPage() {
 		return "jqgrid/event-page";
 	}
 
+	@CacheEvict(value = "records", allEntries=true)
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public @ResponseBody ResponseDto<Event> add(Event event) {
 		
@@ -40,6 +41,7 @@ public class JqgridEventController {
 		return new ResponseDto<Event>(false);
 	}
 	
+	@CacheEvict(value = "records", allEntries=true)
 	@RequestMapping(value = "/edit", method = RequestMethod.POST)
 	public @ResponseBody ResponseDto<Event> edit(Event event) {
 		
@@ -50,6 +52,7 @@ public class JqgridEventController {
 		return new ResponseDto<Event>(false);
 	}
 
+	@CacheEvict(value = "records", allEntries=true)
 	@RequestMapping(value = "/delete", method = RequestMethod.POST)
 	public @ResponseBody ResponseDto<Event> delete(Long id) {
 		
@@ -60,6 +63,7 @@ public class JqgridEventController {
 		return new ResponseDto<Event>(false);
 	}
 	
+	@Cacheable(value = "records")
 	@RequestMapping(value = "/getall", method = RequestMethod.POST)
 	public @ResponseBody JqgridTableDto<Event> getall() {
 

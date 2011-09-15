@@ -24,8 +24,7 @@ public class EventController {
 	private volatile IEventService service;
 
 	@RequestMapping
-	public String getEventPage(Model model) {
-		model.addAttribute("events", service.readAll());
+	public String getEventPage() {
 		return "event-page";
 	}
 

@@ -57,7 +57,7 @@ $(function() {
 	   		{name:'id',index:'id', width:55, editable:false},
 	   		{name:'name',index:'name', width:90, editable:true},
 	   		{name:'description',index:'description', width:90, editable:true},
-	   		{name:'participants',index:'participants', editable:true},
+	   		{name:'participants',index:'participants', width:50, editable:true},
 	   		{name:'date',index:'date', width:90, editable:false, formatter:'date', formatoptions:{newformat: 'd/M/Y'}, editable:true}
 	   	],
 	   	rowNum:10,

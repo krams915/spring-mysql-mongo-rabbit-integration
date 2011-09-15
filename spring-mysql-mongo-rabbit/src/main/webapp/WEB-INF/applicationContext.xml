@@ -30,5 +30,6 @@
 	<import resource="spring-data-jpa.xml"/>
 	<import resource="spring-data-mongo.xml"/>
 	<import resource="spring-rabbit.xml"/>
+	<import resource="spring-cache.xml"/>
 	
 </beans>
