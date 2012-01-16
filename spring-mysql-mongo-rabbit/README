@@ -1,0 +1,15 @@
+Building with Maven
+============
+1. Ensure Maven is installed
+2. Open a command window (Windows) or a terminal (Linux/Mac)
+3. Run the following command:
+
+	mvn tomcat:run
+
+Import the project in Eclipse
+=================
+1. Ensure Maven is installed
+2. Open a command window (Windows) or a terminal (Linux/Mac)
+3. Run the following command:
+
+	mvn eclipse:eclipse -Dwtpversion=2.0
