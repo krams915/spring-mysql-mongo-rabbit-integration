@@ -315,7 +315,7 @@
   </build>
   
   <repositories>
-  
+
   	<!-- For main Spring releases -->
 	<repository>
 		<id>org.springframework.maven.release</id>
@@ -324,7 +324,7 @@
 		<releases><enabled>true</enabled></releases>
 		<snapshots><enabled>false</enabled></snapshots>
 	</repository>
-	
+
 	<!-- For testing against latest Spring snapshots -->
 	<repository>
 		<id>org.springframework.maven.snapshot</id>
@@ -332,8 +332,8 @@
 		<url>http://maven.springframework.org/snapshot</url>
 		<releases><enabled>false</enabled></releases>
 		<snapshots><enabled>true</enabled></snapshots>
-	</repository>
-	
+	</repository> 
+
 	<!-- For developing against latest Spring milestones -->
 	<repository>
 		<id>org.springframework.maven.milestone</id>
@@ -342,18 +342,22 @@
 		<snapshots><enabled>false</enabled></snapshots>
 	</repository>
 
-	<!--  JBoss repository -->
 	<repository>
 		<id>jboss</id>
 		<name>JBoss repository</name>
 		<url>https://repository.jboss.org/nexus/content/repositories/releases</url>
 	</repository>
-	
+
+  </repositories>
+  
+  <pluginRepositories>
+  
 	<!-- Repo for maven-copy-plugin -->
-	<repository>
+	<pluginRepository>
 		<id>evgeny-goldin.org</id>
 		<name>Evgeny Goldin Repository</name>
 		<url>http://evgeny-goldin.org/artifactory/repo/</url>
-	</repository>
-  </repositories>
+	</pluginRepository> 
+
+  </pluginRepositories>
 </project>
