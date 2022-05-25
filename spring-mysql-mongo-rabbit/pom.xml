@@ -10,7 +10,7 @@
 
    <!-- Versions -->
    <properties>
-    <spring.version>3.1.0.M1</spring.version>
+    <spring.version>5.2.22.RELEASE</spring.version>
 	<spring.data.jpa.version>1.1.0.M1</spring.data.jpa.version>
 	<spring.data.mongo.version>1.0.0.M4</spring.data.mongo.version>
 	<spring.amqp.version>1.0.0.RELEASE</spring.amqp.version>
